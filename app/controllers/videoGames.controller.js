@@ -68,6 +68,22 @@ exports.findOne = (req, res) => {
     });
 };
 
+exports.findAllByUser = (req, res) => {
+  const user = req.params.user;
+
+  VideoGame.find({ user: user })
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "User Not found" });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: `Error retrieving user data`});
+    });
+}
+
 // Update a Tutorial by the id in the request
 exports.update = (req, res) => {
   if (!req.body) {

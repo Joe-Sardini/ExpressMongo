@@ -15,6 +15,9 @@ module.exports = app => {
     // Retrieve a single Video Game with id
     router.get("/:id", videoGames.findOne);
   
+    // Retrieve a users entries
+    router.get("/user/:user", videoGames.findAllByUser);
+
     // Update a Video Game with id
     router.put("/:id", videoGames.update);
   
