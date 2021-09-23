@@ -1,7 +1,7 @@
 const db = require("../models");
 const VideoGame = db.videoGames;
 
-// Create and Save a new Tutorial
+// Create and Save a new VG
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.title) {
@@ -16,7 +16,8 @@ exports.create = (req, res) => {
     published: req.body.published ? req.body.published : false,
     rating: req.body.rating,
     genre: req.body.genre,
-    user: req.body.user
+    user: req.body.user,
+    review: req.body.review
   });
 
   // Save Video Game in the database
@@ -24,7 +25,6 @@ exports.create = (req, res) => {
     .save(videoGame)
     .then(data => {
       res.send(data);
-      console.log(data);
     })
     .catch(err => {
       res.status(500).send({

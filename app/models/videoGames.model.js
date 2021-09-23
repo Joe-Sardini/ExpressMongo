@@ -6,7 +6,8 @@ module.exports = mongoose => {
         published: Boolean,
         rating: Number,
         genre: String,
-        user: String
+        user: String,
+        review: String
       },
       { timestamps: true }
     );
