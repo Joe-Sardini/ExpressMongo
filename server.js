@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 
 require("./app/routes/steamGames.routes")(app);
 require("./app/routes/videoGames.routes")(app);
+require("./app/routes/EmulatorGames.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

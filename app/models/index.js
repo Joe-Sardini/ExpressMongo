@@ -8,5 +8,6 @@ db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.videoGames = require("./videoGames.model.js")(mongoose);
 db.SteamGamesList = require("./steamGames.model.js")(mongoose);
+db.EmulatorGame = require("./EmulatorGame.model")(mongoose);
 
 module.exports = db;
